@@ -1,0 +1,46 @@
+body {
+    font-family: 'Courier New', Courier, monospace ;
+    background-color: hsl(227, 10%, 10%);
+}
+h1, h2 {
+    text-align: center;
+    line-height: 1.5em;
+}
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+h2 {
+    font-size: 18px;
+    font-weight: normal;
+}
+header {
+    width: 100%;
+    background-color: hsl(227, 10%, 30%);
+    padding: 5px;
+    color: white;
+    box-shadow: 0 0 10px black;
+}
+main {
+    width: 100%;
+    padding-top: 20px;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: hsl(227, 10%, 30%);
+    box-shadow: 0 0 6px hsl(198, 17%, 30%);
+    text-align: center;
+    color: white;
+    padding: 1em;
+}
+a {
+    color: lightgray;
+    text-decoration: none;
+    font-weight: 600;
+}
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
