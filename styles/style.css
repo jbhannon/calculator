@@ -25,6 +25,39 @@ main {
     width: 100%;
     padding-top: 20px;
 }
+#calculator {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 6px;
+    column-gap: 6px;
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #AAA;
+    padding: 20px;
+    border-radius: 25px;
+}
+#equals {
+    grid-area: 5 / 4 / 7 / 5;
+}
+#calculator div{
+    background-color: #555;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+}
+#calculator #display {
+    grid-area: 1 / 1 / 2 / 5;
+    background-color: black;
+    font-size: 60px;
+    padding: 20px 20px 10px;
+    justify-content: flex-end;
+    word-wrap: none;
+    overflow: scroll;
+}
 footer {
     position: fixed;
     bottom: 0;

@@ -1,29 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Calculator</title>
-</head>
-<body>
-    <header>
-        <h1>Calculator</h1>
-        <h2>by Jordan Hannon</h2>
-    </header>
-    <main>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/reset.css" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<title>Calculator</title>
+	</head>
+	<body>
+		<header>
+			<h1>Calculator</h1>
+			<h2>by Jordan Hannon</h2>
+		</header>
+		<main>
+			<div id="calculator">
+				<div id="display"></div>
+				<div data-do="divide" class="operator">/</div>
+				<div data-do="multiply" class="operator">X</div>
+				<div data-do="subtract" class="operator">-</div>
+				<div data-do="add" class="operator">+</div>
+				<div data-do="7" class="number">7</div>
+				<div data-do="8" class="number">8</div>
+				<div data-do="9" class="number">9</div>
+				<div data-do="back" class="operator">back</div>
+				<div data-do="4" class="number">4</div>
+				<div data-do="5" class="number">5</div>
+				<div data-do="6" class="number">6</div>
+				<div data-do="clear" class="operator">C</div>
+				<div data-do="1" class="number">1</div>
+				<div data-do="2" class="number">2</div>
+				<div data-do="3" class="number">3</div>
+				<div data-do="." class="number">.</div>
+				<div data-do="0" class="number">0</div>
+				<div data-do="negate" id="negate">+/-</div>
+				<div data-do="equals" id="equals">=</div>
+			</div>
+		</main>
+		<footer>
+			Made as part of <a href="https://www.theodinproject.com/courses/web-development-101/lessons/calculator">The Odin Project</a>
+		</footer>
+		<script src="">
+			const add = (a, b) => a + b;
+			const subtract = (a, b) => a - b;
+			const multiply = (a, b) => a * b;
+			const divide = (a, b) => a / b;
+			const operate = (op) => op(lastNum, currentNum);
+			const display = () => (document.querySelector("#display").textContent = displayStr);
+            function chooseOperation(){
+                switch (operation) {
+                    case "add":
+                        operate(add);
+                        return;
+                    case "subtract":
+                        operate(sub);
+                        return;
+                    case "multiply":
+                        operate(multiply);
+                        return;
+                    case "divide":
+                        operate(divide);
+                        return;
+                    
+                }
+            }
+			let displayStr = "";
+            let currentNum = 0;
+            let lastNum = 0;
+            let operation = "";
 
-    </main>
-    <footer>
-        Made as part of <a href="https://www.theodinproject.com/courses/web-development-101/lessons/calculator">The Odin Project</a>
-    </footer>
-    <script>
-        const add = (a,b) => a+b;
-        const subtract = (a,b) => a-b;
-        const multiply = (a,b) => a*b;
-        const divide = (a,b) => a/b;
-        const operate = (op, a, b) => op(a,b);
-    </script>
-</body>
+			document.querySelectorAll(".number").forEach((button) => {
+				button.addEventListener("click", (e) => {
+					displayStr += `${e.target.getAttribute("data-do")}`;
+					display();
+				});
+			});
+            document.querySelectorAll(".operator").forEach((button) => {
+				button.addEventListener("click", (e) => {
+					operation = e.target.getAttribute("data-do");
+				});
+			});
+		</script>
+	</body>
 </html>
