@@ -41,13 +41,20 @@ main {
 #equals {
     grid-area: 5 / 4 / 7 / 5;
 }
-#calculator div{
+.button{
     background-color: #555;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 26px;
+}
+.button:hover {
+    background-color: #666;
+    
+}
+.button:active {
+    background-color: #333;
 }
 #calculator #display {
     grid-area: 1 / 1 / 2 / 5;
@@ -57,6 +64,21 @@ main {
     justify-content: flex-end;
     word-wrap: none;
     overflow: scroll;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.button.operator {
+    background-color:  #777;
+}
+.button.operator:hover {
+    background-color: #888;
+}
+.button.operator:active {
+    background-color: #666;
+}
+[data-do="0"] {
+    grid-area: 6/2/7/4;
 }
 footer {
     position: fixed;
